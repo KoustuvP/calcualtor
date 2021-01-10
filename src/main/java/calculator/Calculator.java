@@ -18,11 +18,11 @@ public class Calculator {
 				ArrayList<Integer> numberList = new ArrayList<Integer>();
 				for (int i = 0; i < numbers.length(); i++) {
 					if (numbers.charAt(i) == ',') {
-						System.out.println(numbers.substring(begin, i));
 						numberList.add(Integer.parseInt(numbers.substring(begin, i)));
 						begin = i + 1;
 					}
 				}
+				if(begin<numbers.length())
 				numberList.add(Integer.parseInt(numbers.substring(begin)));
 				for (int number : numberList) {
 					sum += number;
