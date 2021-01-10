@@ -39,6 +39,13 @@ public class CalculatorTest {
 		int expectedResult= calculator.add("5\n7,7,3");
 		assertEquals(expectedResult, testValue);
     }
+	
+	@Test
+    void addTestWithEndingSeparator() { 	
+		int testValue = 67;
+		int expectedResult= calculator.add("5\n7,7,3,");
+		assertEquals(expectedResult, testValue);
+    }
 }
 
 
