@@ -48,7 +48,7 @@ public class CalculatorTest {
     }
 	@Test
     void addTestWithDifferentDelimiter() { 	
-		int testValue = 67;
+		int testValue = 3;
 		int expectedResult= calculator.add("//;\n1;2");
 		assertEquals(expectedResult, testValue);
     }

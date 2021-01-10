@@ -10,20 +10,25 @@ public class Calculator {
 		if (numbers.isBlank())
 			return 0;
 		else {
-			numbers= numbers.replace("\n","");
+			char delemiter = ',';
+			if (numbers.charAt(0) == '/' && numbers.charAt(1) == '/') {
+				delemiter = numbers.charAt(2);
+				numbers = numbers.substring(4);
+			}
+			numbers = numbers.replace("\n", "");
 
-			int separatorIndex = numbers.indexOf(",");
+			int separatorIndex = numbers.indexOf(delemiter);
 			if (separatorIndex > 0) {
 				int begin = 0, sum = 0;
 				ArrayList<Integer> numberList = new ArrayList<Integer>();
 				for (int i = 0; i < numbers.length(); i++) {
-					if (numbers.charAt(i) == ',') {
+					if (numbers.charAt(i) == delemiter) {
 						numberList.add(Integer.parseInt(numbers.substring(begin, i)));
 						begin = i + 1;
 					}
 				}
-				if(begin<numbers.length())
-				numberList.add(Integer.parseInt(numbers.substring(begin)));
+				if (begin < numbers.length())
+					numberList.add(Integer.parseInt(numbers.substring(begin)));
 				for (int number : numberList) {
 					sum += number;
 				}
