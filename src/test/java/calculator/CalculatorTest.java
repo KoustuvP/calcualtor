@@ -13,6 +13,13 @@ public class CalculatorTest {
 		int expectedResult= calculator.add("");
 		assertEquals(expectedResult, testValue);
     }
+	
+	@Test
+    void addTestWithFirstOperandValue() { 	
+		int testValue = 5;
+		int expectedResult= calculator.add("5");
+		assertEquals(expectedResult, testValue);
+    }
 }
 
 
