@@ -70,4 +70,11 @@ public class CalculatorTest {
 		int expectedResult = calculator.add("1001,2");
 		assertEquals(expectedResult, testValue);
 	}
+
+	@Test
+	void addTestWithMultipleDelemeters() throws Exception {
+		int testValue = 6;
+		int expectedResult = calculator.add("//[***]\n1***2***3");
+		assertEquals(expectedResult, testValue);
+	}
 }
