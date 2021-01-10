@@ -27,6 +27,12 @@ public class CalculatorTest {
 		int expectedResult= calculator.add("5,7");
 		assertEquals(expectedResult, testValue);
     }
+	@Test
+    void addTestWithmultipleOperands() { 	
+		int testValue = 20;
+		int expectedResult= calculator.add("5,7,3,5");
+		assertEquals(expectedResult, testValue);
+    }
 }
 
 
