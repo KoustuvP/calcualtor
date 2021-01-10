@@ -77,7 +77,7 @@ public class CalculatorTest {
 		int expectedResult = calculator.add("//[***]\n1***2***3");
 		assertEquals(expectedResult, testValue);
 	}
-	
+
 	@Test
 	void addTestWithMultipleDifferentDelemeters() throws Exception {
 		int testValue = 6;
