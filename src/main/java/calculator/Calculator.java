@@ -6,7 +6,7 @@ import com.sun.tools.javac.util.List;
 
 public class Calculator {
 
-	public int add(String numbers) {
+	public int add(String numbers) throws Exception {
 		if (numbers.isBlank())
 			return 0;
 		else {
@@ -20,6 +20,7 @@ public class Calculator {
 			int separatorIndex = numbers.indexOf(delemiter);
 			if (separatorIndex > 0) {
 				int begin = 0, sum = 0;
+				String errorNumbers = "";
 				ArrayList<Integer> numberList = new ArrayList<Integer>();
 				for (int i = 0; i < numbers.length(); i++) {
 					if (numbers.charAt(i) == delemiter) {
@@ -29,9 +30,14 @@ public class Calculator {
 				}
 				if (begin < numbers.length())
 					numberList.add(Integer.parseInt(numbers.substring(begin)));
+
 				for (int number : numberList) {
+					if (number < 0)
+						errorNumbers += number + " ";
 					sum += number;
 				}
+				if (errorNumbers.length() > 0)
+					throw new Exception("“negatives not allowed - " + errorNumbers);
 				return sum;
 			} else
 				return Integer.parseInt(numbers);
