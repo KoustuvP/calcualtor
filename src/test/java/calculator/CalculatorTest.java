@@ -20,6 +20,13 @@ public class CalculatorTest {
 		int expectedResult= calculator.add("5");
 		assertEquals(expectedResult, testValue);
     }
+	
+	@Test
+    void addTestWithTwoOperandValue() { 	
+		int testValue = 12;
+		int expectedResult= calculator.add("5,7");
+		assertEquals(expectedResult, testValue);
+    }
 }
 
 
