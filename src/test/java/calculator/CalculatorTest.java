@@ -35,8 +35,8 @@ public class CalculatorTest {
     }
 	@Test
     void addTestWithNewLineBetweenNumbers() { 	
-		int testValue = 20;
-		int expectedResult= calculator.add("5\7,7,3,");
+		int testValue = 67;
+		int expectedResult= calculator.add("5\n7,7,3");
 		assertEquals(expectedResult, testValue);
     }
 }

@@ -10,12 +10,15 @@ public class Calculator {
 		if (numbers.isBlank())
 			return 0;
 		else {
+			numbers= numbers.replace("\n","");
+
 			int separatorIndex = numbers.indexOf(",");
 			if (separatorIndex > 0) {
 				int begin = 0, sum = 0;
 				ArrayList<Integer> numberList = new ArrayList<Integer>();
 				for (int i = 0; i < numbers.length(); i++) {
 					if (numbers.charAt(i) == ',') {
+						System.out.println(numbers.substring(begin, i));
 						numberList.add(Integer.parseInt(numbers.substring(begin, i)));
 						begin = i + 1;
 					}
