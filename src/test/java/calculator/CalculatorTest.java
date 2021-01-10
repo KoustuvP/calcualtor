@@ -50,12 +50,12 @@ public class CalculatorTest {
 		assertEquals(expectedResult, testValue);
 	}
 
-	@Test
-	void addTestWithDifferentDelimiter() throws Exception {
-		int testValue = 3;
-		int expectedResult = calculator.add("//;\n1;2");
-		assertEquals(expectedResult, testValue);
-	}
+//	@Test
+//	void addTestWithDifferentDelimiter() throws Exception {
+//		int testValue = 3;
+//		int expectedResult = calculator.add("//;\n1;2");
+//		assertEquals(expectedResult, testValue);
+//	}
 
 	@Test
 	void addTestWithNegativeNumberException() {
@@ -75,6 +75,13 @@ public class CalculatorTest {
 	void addTestWithMultipleDelemeters() throws Exception {
 		int testValue = 6;
 		int expectedResult = calculator.add("//[***]\n1***2***3");
+		assertEquals(expectedResult, testValue);
+	}
+	
+	@Test
+	void addTestWithMultipleDifferentDelemeters() throws Exception {
+		int testValue = 6;
+		int expectedResult = calculator.add("//[***][%%%]\n1***2%%%3");
 		assertEquals(expectedResult, testValue);
 	}
 }
