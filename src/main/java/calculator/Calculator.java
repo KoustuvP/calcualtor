@@ -34,7 +34,8 @@ public class Calculator {
 				for (int number : numberList) {
 					if (number < 0)
 						errorNumbers += number + " ";
-					sum += number;
+					if (number <= 1000)
+						sum += number;
 				}
 				if (errorNumbers.length() > 0)
 					throw new Exception("“negatives not allowed - " + errorNumbers);

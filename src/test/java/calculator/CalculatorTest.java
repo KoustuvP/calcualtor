@@ -63,11 +63,11 @@ public class CalculatorTest {
 			calculator.add("-5,-6");
 		});
 	}
-	
+
 	@Test
 	void addTestWithNumberGreaterThanThousand() throws Exception {
 		int testValue = 2;
-		int expectedResult = calculator.add("1000,2");
+		int expectedResult = calculator.add("1001,2");
 		assertEquals(expectedResult, testValue);
 	}
 }
