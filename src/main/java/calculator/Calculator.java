@@ -1,5 +1,9 @@
 package calculator;
 
+import java.util.ArrayList;
+
+import com.sun.tools.javac.util.List;
+
 public class Calculator {
 
 	public int add(String numbers) {
@@ -7,10 +11,21 @@ public class Calculator {
 			return 0;
 		else {
 			int separatorIndex = numbers.indexOf(",");
-			if (separatorIndex > 0)
-				return Integer.parseInt(numbers.substring(0, separatorIndex))
-						+ Integer.parseInt(numbers.substring(separatorIndex + 1, numbers.length()));
-			else
+			if (separatorIndex > 0) {
+				int begin = 0, sum = 0;
+				ArrayList<Integer> numberList = new ArrayList<Integer>();
+				for (int i = 0; i < numbers.length(); i++) {
+					if (numbers.charAt(i) == ',') {
+						numberList.add(Integer.parseInt(numbers.substring(begin, i)));
+						begin = i + 1;
+					}
+				}
+				numberList.add(Integer.parseInt(numbers.substring(begin)));
+				for (int number : numberList) {
+					sum += number;
+				}
+				return sum;
+			} else
 				return Integer.parseInt(numbers);
 		}
 	}
